@@ -255,40 +255,10 @@ Console.WriteLine($"Best move: Row {bestRow}, Column {bestCol}");
 ## Диаграма на логиката
 ![diagram1](https://github.com/user-attachments/assets/aa562036-90f0-4fc8-a76a-4b4a84a5b065)
 
-## Инсталация и стартиране
-
-### 1. Клониране
-
-```bash
-git clone <https://github.com/GabrielPilichev/TicTacToe>
-cd TicTacToeMinimax
-```
-
-### 2. Компилация
-
-```bash
-dotnet build
-```
-
-За Release версия с пълни оптимизации:
-```bash
-dotnet build -c Release
-```
-
-### 3. Стартиране
-
-```bash
-dotnet run
-```
-
-За Release версия:
-```bash
-dotnet run -c Release
-```
-
 ### Изход
 <img width="546" height="423" alt="Screenshot 2025-12-09 094601" src="https://github.com/user-attachments/assets/fa7c711e-d291-4815-8ea6-28d8df3920a3" />
 
 **Забележка**: Този проект демонстрира оптимална AI имплементация и модерни C# performance техники. Кодът е написан с фокус върху производителност без да се жертва четимост.
+
 
 
