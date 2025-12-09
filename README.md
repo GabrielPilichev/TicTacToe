@@ -254,6 +254,7 @@ Console.WriteLine($"Best move: Row {bestRow}, Column {bestCol}");
 
 ## Диаграма на логиката
 ![diagram1](https://github.com/user-attachments/assets/aa562036-90f0-4fc8-a76a-4b4a84a5b065)
+
 ## Инсталация и стартиране
 
 ### 1. Клониране
@@ -288,76 +289,6 @@ dotnet run -c Release
 ### Изход
 <img width="546" height="423" alt="Screenshot 2025-12-09 094601" src="https://github.com/user-attachments/assets/fa7c711e-d291-4815-8ea6-28d8df3920a3" />
 
-## Troubleshooting
-
-| Проблем | Причина | Решение |
-|---------|---------|---------|
-| Алгоритъмът е бавен | Debug mode | Използвайте `dotnet run -c Release` |
-| Stack overflow | Твърде дълбока рекурсия | Не трябва да се случва за 3x3 Tic-Tac-Toe |
-| Неправилно определен играч | Грешка в IsMaxPlayerTurn() | Проверете преброяването на 'x' и 'o' |
-| Неправилни оценки | Базов случай не е коректен | Проверете WhoWin() логиката |
-| Out of bounds грешка | Невалидни координати | Проверете GetEmptyPlaces() |
-
-## FAQ
-
-**Може ли AI да бъде победен?**
-
-Не — Minimax покрива цялото дърво на играта и винаги избира оптималния ход.
-
-**Колко бързо е оптимизираната версия?**
-
-Оптимизациите осигуряват 10-100x ускорение спрямо наивната имплементация. Типично време за празна дъска е под 1ms в Release mode.
-
-**Подходящо ли е за по-сложни игри?**
-
-Да, но за по-големи игри като Connect Four или Chess се изискват допълнителни техники:
-- Transposition tables (memoization)
-- Iterative deepening
-- Move ordering
-- Heuristic evaluation functions
-- Monte Carlo Tree Search (MCTS)
-
-**Защо използвате Span<int> вместо List<int>?**
-
-`Span<int>` с `stackalloc` се алокира на стека вместо на heap-а, което елиминира Garbage Collection overhead и прави кода значително по-бърз.
-
-**Може ли да се добави UI?**
-
-Да. Подходящи технологии са:
-- **WinForms** - лесна за начинаещи
-- **WPF** - модерна desktop технология
-- **MAUI** - cross-platform (Windows, macOS, iOS, Android)
-- **Blazor** - web-based интерфейс
-- **Console UI** - с библиотеки като Spectre.Console
-
-**Как мога да използвам FindBestMove()?**
-
-```csharp
-var (row, col) = FindBestMove(board);
-board[row][col] = IsMaxPlayerTurn(board) ? 'x' : 'o';
-```
-
-## TODO
-
-- [ ] Графичен потребителски интерфейс
-- [ ] Визуализация на дървото на търсене с брой посетени възли
-- [ ] Transposition table за кеширане на оценени позиции
-- [ ] Настройки за трудност (ограничена дълбочина)
-- [ ] Поддръжка за други игри (Connect Four, Reversi)
-- [ ] Unit tests за всички методи
-- [ ] Benchmark сравнения с други имплементации
-- [ ] Monte Carlo Tree Search версия
-
-## Performance Metrics
-
-Типични времена за изпълнение (Release mode, AMD Ryzen 9 / Intel i9):
-
-| Състояние на дъската | Празни клетки | Време |
-|---------------------|---------------|-------|
-| Празна дъска | 9 | ~0.5-2ms |
-| Средна игра | 5 | ~0.1-0.5ms |
-| Края на играта | 2-3 | ~0.01-0.05ms |
-
-
 **Забележка**: Този проект демонстрира оптимална AI имплементация и модерни C# performance техники. Кодът е написан с фокус върху производителност без да се жертва четимост.
+
 
