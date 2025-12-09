@@ -286,27 +286,7 @@ dotnet run -c Release
 ```
 
 ### Изход
-
-```
-Initial Board State:
----------
- x | x |   
----------
- o | o |   
----------
-   |   |   
----------
-It is 'x's turn.
-
---- Alpha-Beta Minimax Evaluation ---
-Optimal Board Value: 1
-Execution Time: 0.234 ms
-
-Value 1 means 'x' wins, -1 means 'o' wins, 0 means a draw.
-
---- Best Move Analysis ---
-Best move: Row 0, Column 2
-```
+<img width="546" height="423" alt="Screenshot 2025-12-09 094601" src="https://github.com/user-attachments/assets/fa7c711e-d291-4815-8ea6-28d8df3920a3" />
 
 ## Troubleshooting
 
@@ -380,3 +360,4 @@ board[row][col] = IsMaxPlayerTurn(board) ? 'x' : 'o';
 
 
 **Забележка**: Този проект демонстрира оптимална AI имплементация и модерни C# performance техники. Кодът е написан с фокус върху производителност без да се жертва четимост.
+
